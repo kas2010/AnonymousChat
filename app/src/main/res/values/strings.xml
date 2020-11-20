@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">AnonymousChat</string>
+    <!-- menu -->
+    <string name="menu_home">Home</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_dialog">Dialog</string>
+    <string name="menu_profile">Profile</string>
+    <!-- labels -->
+    <string name="label_welcome_title">Welcome to AnonymousChat</string>
+    <string name="label_you">You</string>
+    <string name="label_search_guy">Guy</string>
+    <string name="label_search_girl">Girl</string>
+    <string name="label_search_all">All</string>
+    <string name="label_name">Your name (nik)</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_age">Age</string>
+    <string name="label_city">City</string>
+    <string name="label_preferences">Preferences</string>
+    <string name="label_male">Guy</string>
+    <string name="label_female">Girl</string>
+    <string name="label_search">You search</string>
+    <string name="label_search_in_your_city">Search only in your city</string>
+    <string name="label_enter_text">Enter text</string>
+    <!-- buttons -->
+    <string name="button_apply">Apply</string>
+    <string name="button_add">Add</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_save">Save</string>
+    <string name="button_close">Close</string>
+    <!-- messages -->
+    <string name="message_enter_keyword">Please enter the keyword!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <array name="initial_slider_values">
+        <item>18.0</item>
+        <item>45.0</item>
+    </array>
+</resources>

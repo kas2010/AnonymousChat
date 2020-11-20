@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "991805967588",
+    "firebase_url": "https://anonymouschat-483d0.firebaseio.com",
+    "project_id": "anonymouschat-483d0",
+    "storage_bucket": "anonymouschat-483d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991805967588:android:c067d858a3b709f58770f1",
+        "android_client_info": {
+          "package_name": "com.alikhansoftware.anonymouschat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991805967588-i3uf6nf5l2el3gkj0dmbrgavg220fl22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alikhansoftware.anonymouschat",
+            "certificate_hash": "76c212f03ed997ead451fffff3bc19dc5ee86485"
+          }
+        },
+        {
+          "client_id": "991805967588-b9ri4d0kprrq5dptprobd3orufejaekr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQDmU78awKOkXHg7cwExQtaKkOMkZf7Kw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991805967588-b9ri4d0kprrq5dptprobd3orufejaekr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
