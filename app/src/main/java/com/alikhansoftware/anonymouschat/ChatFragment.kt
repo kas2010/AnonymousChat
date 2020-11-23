@@ -31,7 +31,7 @@ class ChatFragment : Fragment() {
                 displayMessages(dialog.uid!!)
 
                 buttonOK.setOnClickListener {
-                    model.createMessage(dialog.userId!!, editMessageText.text.toString())
+                    model.createMessage(dialog.currentUser.uid, editMessageText.text.toString())
                     editMessageText.setText("")
                 }
             })

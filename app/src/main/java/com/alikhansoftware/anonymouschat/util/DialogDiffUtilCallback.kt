@@ -1,11 +1,11 @@
 package com.alikhansoftware.anonymouschat.util
 
 import androidx.recyclerview.widget.DiffUtil
-import com.alikhansoftware.anonymouschat.model.Dialog
+import com.alikhansoftware.anonymouschat.to.DialogTo
 
 class DialogDiffUtilCallback(
-    private val oldList: List<Dialog>,
-    private val newList: List<Dialog>
+    private val oldList: List<DialogTo>,
+    private val newList: List<DialogTo>
 ) :
     DiffUtil.Callback() {
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
@@ -25,7 +25,6 @@ class DialogDiffUtilCallback(
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldDialog = oldList[oldItemPosition]
         val newDialog = newList[newItemPosition]
-        return oldDialog.userId == newDialog.userId
-                && oldDialog.displayName == oldDialog.displayName
+        return oldDialog.uid == newDialog.uid
     }
 }

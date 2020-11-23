@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.alikhansoftware.anonymouschat.MainFragment"
+        android:name="com.alikhansoftware.anonymouschat.HomeFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
     <fragment
@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/dialogFragment"
-        android:name="com.alikhansoftware.anonymouschat.DialogFragment"
+        android:name="com.alikhansoftware.anonymouschat.DialogsFragment"
         android:label="fragment_dialog"
-        tools:layout="@layout/fragment_dialog" />
+        tools:layout="@layout/fragment_message" />
 </navigation>

@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.alikhansoftware.anonymouschat.util.ChipUtil
 import com.alikhansoftware.anonymouschat.data.DataViewModel
+import com.alikhansoftware.anonymouschat.util.ChipUtil
 import kotlinx.android.synthetic.main.fragment_search.*
 import java.util.*
 
@@ -26,20 +26,18 @@ class SearchFragment : Fragment() {
 
             model = ViewModelProvider(activity).get(DataViewModel::class.java)
 
-            model.getUser().observe(viewLifecycleOwner, { user ->
-                user.filter?.let {
-                    when (it.gender) {
-                        1 -> chipMale.isChecked = true
-                        2 -> chipFemale.isChecked = true
-                        else -> chipAll.isChecked = true
-                    }
-                    checkCity.isChecked = it.checkCity
-                    rangeAge.values = listOf(it.ageFrom, it.ageTo)
-                    chipUtil.createChipList(
-                        it.preferences.toTypedArray(),
-                        chipGroupPreferences
-                    )
+            model.getFilter().observe(viewLifecycleOwner, { filter ->
+                when (filter.gender) {
+                    1 -> chipMale.isChecked = true
+                    2 -> chipFemale.isChecked = true
+                    else -> chipAll.isChecked = true
                 }
+                checkCity.isChecked = filter.checkCity
+                rangeAge.values = listOf(filter.ageFrom, filter.ageTo)
+                chipUtil.createChipList(
+                    filter.preferences.toTypedArray(),
+                    chipGroupPreferences
+                )
             })
 
             buttonAddPreference.setOnClickListener {

@@ -5,6 +5,7 @@ import com.google.firebase.database.IgnoreExtraProperties
 
 @IgnoreExtraProperties
 data class Filter(
+    var userId: String? = "",
     var gender: Int = 0,
     var ageFrom: Float = 18.0F,
     var ageTo: Float = 100.0F,

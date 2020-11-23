@@ -9,10 +9,10 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.alikhansoftware.anonymouschat.R
 import com.alikhansoftware.anonymouschat.data.DataViewModel
-import com.alikhansoftware.anonymouschat.model.Dialog
+import com.alikhansoftware.anonymouschat.to.DialogTo
 
 class DialogAdapter : RecyclerView.Adapter<DialogAdapter.MyViewHolder>() {
-    private var dialogs = mutableListOf<Dialog>()
+    private var dialogs = mutableListOf<DialogTo>()
     private lateinit var navController: NavController
     private lateinit var model: DataViewModel
 
@@ -23,12 +23,12 @@ class DialogAdapter : RecyclerView.Adapter<DialogAdapter.MyViewHolder>() {
         val lastMessage: TextView = v.findViewById(R.id.tvLastMessage)
     }
 
-    fun setDialogList(dialogs: List<Dialog>) {
+    fun setDialogList(dialogs: List<DialogTo>) {
         this.dialogs = dialogs.toMutableList()
         notifyDataSetChanged()
     }
 
-    fun getDialogList(): List<Dialog> {
+    fun getDialogList(): List<DialogTo> {
         return dialogs
     }
 
@@ -56,7 +56,7 @@ class DialogAdapter : RecyclerView.Adapter<DialogAdapter.MyViewHolder>() {
             val dialog = dialogs[position]
 
             with(dialog) {
-                holder.displayName.text = model.getUserDisplayName(userId)
+                holder.displayName.text = "${currentUser.name}, ${currentUser.age}, ${currentUser.city}"
                 holder.lastMessage.text = lastMessage?.text
 
                 holder.itemView.setOnClickListener {

@@ -9,19 +9,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alikhansoftware.anonymouschat.adapter.UserAdapter
-import com.alikhansoftware.anonymouschat.util.UserDiffUtilCallback
+import com.alikhansoftware.anonymouschat.adapter.DialogAdapter
+import com.alikhansoftware.anonymouschat.util.DialogDiffUtilCallback
 import com.alikhansoftware.anonymouschat.data.DataViewModel
-import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_message.*
 
-
-class MainFragment : Fragment() {
+class DialogsFragment : Fragment() {
     private lateinit var model: DataViewModel
-    private val adapter = UserAdapter()
+    private val adapter = DialogAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
 
         activity?.let { activity ->
@@ -33,28 +30,25 @@ class MainFragment : Fragment() {
                         findNavController().navigate(R.id.profileFragment)
                     }
                     DataViewModel.State.USER_EXIST -> {
-                        model.getUsers()
-                            .observe(viewLifecycleOwner, { users ->
-                                val callback = UserDiffUtilCallback(adapter.getUserList(), users)
+                        model.getDialogs()
+                            .observe(viewLifecycleOwner, { dialogs ->
+                                val callback =
+                                    DialogDiffUtilCallback(adapter.getDialogList(), dialogs)
                                 val result = DiffUtil.calculateDiff(callback)
-                                adapter.setUserList(users)
+                                adapter.setDialogList(dialogs)
                                 result.dispatchUpdatesTo(adapter)
                             })
                     }
-                    else -> {}
+                    else -> {
+                    }
                 }
             })
 
             adapter.setNavController(findNavController())
             adapter.setViewModel(model)
-            mainRecyclerView.adapter = adapter
-            mainRecyclerView.layoutManager = LinearLayoutManager(activity)
-            mainRecyclerView.setHasFixedSize(true)
-        }
-
-        //for test
-        buttonSignOut.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
+            dialogRecyclerView.adapter = adapter
+            dialogRecyclerView.layoutManager = LinearLayoutManager(activity)
+            dialogRecyclerView.setHasFixedSize(true)
         }
     }
 
@@ -63,10 +57,10 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_message, container, false)
     }
 
     companion object {
-        private const val TAG = "MainFragment"
+        private const val TAG = "DialogFragment"
     }
 }

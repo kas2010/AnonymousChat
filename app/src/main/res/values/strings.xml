@@ -3,7 +3,7 @@
     <!-- menu -->
     <string name="menu_home">Home</string>
     <string name="menu_search">Search</string>
-    <string name="menu_dialog">Dialog</string>
+    <string name="menu_message">Messages</string>
     <string name="menu_profile">Profile</string>
     <!-- labels -->
     <string name="label_welcome_title">Welcome to AnonymousChat</string>

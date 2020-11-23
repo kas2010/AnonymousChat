@@ -58,7 +58,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
             val user = users[position]
 
             with(user) {
-                holder.displayName.text = model.getUserDisplayName(uid)
+                holder.displayName.text = "$name, $age, $city"
                 holder.enter.text = initEnter(Date().time)
                 holder.preferences.text = preferences.toString()
 
